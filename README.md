@@ -8,9 +8,9 @@ A user-defined element (UEL) implementation in Abaqus for simulating fatigue dam
 
 This repository contains the Fortran-based Abaqus UEL subroutine developed to model progressive damage in composite laminates under quasi-static and fatigue loading conditions. The implementation combines:
 
-- An **anisotropic phase-field formulation** for fracture
-- A **cycle-level averaging (CLA)** strategy for efficient fatigue simulation
-- Coupling of damage and displacement fields in a monolithic framework
+- An **anisotropic phase-field formulation** with modified driving force for fracture
+- A **new constant-load-accumulation (CLA)** strategy for efficient fatigue simulation
+- Coupling of damage and displacement fields in a monolithic framework using BFGS algorithm 
 
 > The model is detailed in our article:  
 > **[Full Title of Your Paper]**  
@@ -21,13 +21,13 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 
 ## 📁 Contents
 
-- `uel_aniso_pf_cla.for`: Fortran source code for the UEL
+- `uel_aniso_pf_cla.for`: Fortran source code for the UEL [Currently provided for review]
 - `input_examples/`: Sample Abaqus `.inp` files for:
-  - Single-edge notched tension (Constant Stiffness)
-  - Single-edge notched tension (Variable Stiffness)
-  - Double cantilever beam (DCB)
-  - Open-hole tension (OHT)
-- `postprocessing/`: Python scripts to extract and visualize results
+  - Single-edge notched tension (Constant Stiffness) [Currently provided for review]
+  - Single-edge notched tension (Variable Stiffness) [Will be uploaded later]
+  - Double cantilever beam (DCB)                     [Will be uploaded later]
+  - Open-hole tension (OHT)                          [Will be uploaded later]
+- `postprocessing/`: Python scripts to extract and visualize results [Will be uploaded later]
 - `README.md`: Project documentation
 
 ---
