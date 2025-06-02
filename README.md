@@ -21,7 +21,7 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 
 ## 📁 Contents
 
-- `uel_aniso_pf_dcla.for`: Fortran source code for the UEL [Currently provided for review]
+- `anisotropic_pf_dcla.for`: Fortran source code for the UEL [Currently provided for review]
 - `input_examples/`: Sample Abaqus `.inp` files for:
   - Single-edge notched tension (Constant Stiffness) [Currently provided for review]
   - Single-edge notched tension (Variable Stiffness) [Will be uploaded later]
@@ -44,7 +44,7 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 
 1. Compile the UEL with your Abaqus installation:
    ```bash
-   abaqus make library=uel_aniso_pf_dcla.for
+   abaqus make library=anisotropic_pf_dcla.for
 2. Run an example job from the command line:
    ```bash
-   abaqus job=<job_name> user=uel_aniso_pf_dcla.for input=input_examples/<example_file>.inp interactive
+   abaqus job=<job_name> user=anisotropic_pf_dcla.for input=input_examples/<example_file>.inp interactive
