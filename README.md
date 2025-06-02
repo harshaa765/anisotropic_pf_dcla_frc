@@ -1,6 +1,6 @@
 # anisotropic_pf_cla_frc
 
-A user-defined element (UEL) implementation in Abaqus for simulating fatigue damage in fiber-reinforced composites (FRCs) using an anisotropic phase-field model and a new constant-load-accumulation (CLA) scheme.
+A user-defined element (UEL) implementation in Abaqus for simulating fatigue damage in fiber-reinforced composites (FRCs) using an anisotropic phase-field model and a new degradation-informed constant-load-accumulation (D-CLA) scheme.
 
 ---
 
@@ -9,7 +9,7 @@ A user-defined element (UEL) implementation in Abaqus for simulating fatigue dam
 This repository contains the Fortran-based Abaqus UEL subroutine developed to model progressive damage in composite laminates under quasi-static and fatigue loading conditions. The implementation combines:
 
 - An **anisotropic phase-field formulation** with modified driving force for fracture
-- A **new constant-load-accumulation (CLA)** strategy for efficient fatigue simulation
+- A **new degradation-informed constant-load-accumulation (D-CLA)** strategy for efficient fatigue simulation
 - Coupling of damage and displacement fields in a monolithic framework using BFGS algorithm 
 
 > The model is detailed in our article:  
@@ -21,7 +21,7 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 
 ## 📁 Contents
 
-- `uel_aniso_pf_cla.for`: Fortran source code for the UEL [Currently provided for review]
+- `uel_aniso_pf_dcla.for`: Fortran source code for the UEL [Currently provided for review]
 - `input_examples/`: Sample Abaqus `.inp` files for:
   - Single-edge notched tension (Constant Stiffness) [Currently provided for review]
   - Single-edge notched tension (Variable Stiffness) [Will be uploaded later]
@@ -44,7 +44,7 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 
 1. Compile the UEL with your Abaqus installation:
    ```bash
-   abaqus make library=uel_aniso_pf_cla.for
+   abaqus make library=uel_aniso_pf_dcla.for
 2. Run an example job from the command line:
    ```bash
-   abaqus job=<job_name> user=uel_aniso_pf_cla.for input=input_examples/<example_file>.inp interactive
+   abaqus job=<job_name> user=uel_aniso_pf_dcla.for input=input_examples/<example_file>.inp interactive
