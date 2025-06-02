@@ -1,4 +1,4 @@
-# anisotropic_pf_cla_frc
+# anisotropic_pf_dcla_frc
 
 A user-defined element (UEL) implementation in Abaqus for simulating fatigue damage in fiber-reinforced composites (FRCs) using an anisotropic phase-field model and a new degradation-informed constant-load-accumulation (D-CLA) scheme.
 
