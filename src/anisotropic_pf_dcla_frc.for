@@ -236,8 +236,6 @@ ENDIF
    if(kstep .eq. 1) then 
 
    alph=G_MI*PSIP*(1.0_dp-pf)*(1.0_dp-pf)
-   ! alph = G_MI*PSIP
-   !alph = omega*G_MI*(Hf*SQRT(BETA+1)/G_F + HmI/G_MI + HmII/G_MII)
    !Update fatigue history variable
    if ((alph.ge.alphn).and.(dtime.gt.0.0_dp)) then
     alphB = alphBn+abs(alph-alphn)
@@ -249,20 +247,6 @@ ENDIF
    
    else
 
-!   The following didn't work
-!   alph=G_MI*PSIP*(1.0_dp-pf)*(1.0_dp-pf)
-!   ! alphB = alphBn + alph
-!   ! alph = G_MI*PSIP
-!   if ((alph.ge.alphn).and.(dtime.gt.0.0_dp)) then
-!    alphB = alphBn+abs(alph-alphn)
-!   else
-!    alphB=alphBn
-!   endif  
-
-!   The following didn't work
-   ! delta_alph = delta_alphn + ddse 
-
-!  Let us try the follows: 
    alphB = alphBn + cycles*delta_alphn !Adding the last delta_alphn
    if(omegan .ne. 0.0_dp) then   
      ratio = (omega/omegan)*(act_psip/act_psipn)  !should be less than or equal to 1.0_dp 
