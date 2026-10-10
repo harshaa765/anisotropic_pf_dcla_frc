@@ -13,22 +13,20 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 - Coupling of damage and displacement fields in a monolithic framework using BFGS algorithm 
 
 > The model is detailed in our article:  
-> **[Full Title of Your Paper]**  
-> _Submitted to Journal_  
-> [DOI/link to be added upon publication]
+> **Degradation-informed load accumulation framework for phase-field modeling of high-cycle fatigue**  
+> _Composites Part A: Applied Science and Manufacturing_ (2025)  
+> [doi:10.1016/j.compositesa.2025.109377](https://doi.org/10.1016/j.compositesa.2025.109377)
 
 ---
 
 ## 📁 Contents
 
-- `anisotropic_pf_dcla.for`: Fortran source code for the UEL [Currently provided for review]
-- `input_examples/`: Sample Abaqus `.inp` files for:
-  - Single-edge notched tension (Constant Stiffness) [Currently provided for review]
-  - Single-edge notched tension (Variable Stiffness) [Will be uploaded later]
-  - Double cantilever beam (DCB)                     [Will be uploaded later]
-  - Open-hole tension (OHT)                          [Will be uploaded later]
-- `postprocessing/`: Python scripts to extract and visualize results [Will be uploaded later]
+- `src/anisotropic_pf_dcla_frc.for`: Fortran source code for the UEL
+- `examples/anisotropic_pf_dcla_frc.inp`: Abaqus input file, single-edge notched tension (constant stiffness)
+- `examples/Amplitude.txt`: load amplitude table used by the example
 - `README.md`: Project documentation
+
+Planned additions: single-edge notched tension (variable stiffness), double cantilever beam (DCB), open-hole tension (OHT), and Python post-processing scripts.
 
 ---
 
@@ -44,7 +42,7 @@ This repository contains the Fortran-based Abaqus UEL subroutine developed to mo
 
 1. Compile the UEL with your Abaqus installation:
    ```bash
-   abaqus make library=anisotropic_pf_dcla.for
+   abaqus make library=src/anisotropic_pf_dcla_frc.for
 2. Run an example job from the command line:
    ```bash
-   abaqus job=<job_name> user=anisotropic_pf_dcla.for input=input_examples/<example_file>.inp interactive
+   abaqus job=<job_name> user=src/anisotropic_pf_dcla_frc.for input=examples/<example_file>.inp interactive
